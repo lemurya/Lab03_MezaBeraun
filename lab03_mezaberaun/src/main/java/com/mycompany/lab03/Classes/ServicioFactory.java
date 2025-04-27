@@ -6,7 +6,7 @@ package com.mycompany.lab03.Classes;
 
 /**
  *
- * @author RYA
+ * @author hawaiana
  */
 public abstract class ServicioFactory {
     protected String direccionCliente;
@@ -27,6 +27,5 @@ public abstract class ServicioFactory {
         this.nombreCliente = nombreCliente;
     }
 
-  
     public abstract ServicioLimpieza darServicio();
 }

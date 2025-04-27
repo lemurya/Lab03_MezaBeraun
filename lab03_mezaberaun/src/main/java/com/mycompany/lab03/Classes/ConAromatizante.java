@@ -6,23 +6,18 @@ package com.mycompany.lab03.Classes;
 
 /**
  *
- * @author aleramirez
+ * @author hawaiana
  */
-public class ConAromatizante extends ServicioAdicional{
+public class ConAromatizante extends ServicioAdicional {
 
-    public ConAromatizante(String direccionCliente, double duraciónHoras, double tarifaHora, boolean incluyeMateriales, String nombreCliente) {
-        super(direccionCliente, duraciónHoras, tarifaHora, incluyeMateriales, nombreCliente);
+    private static final double COSTO = 5.00;
+
+    public ConAromatizante(ServicioLimpieza servicioBase) {
+        super(servicioBase);
     }
 
     @Override
     public double calcularPrecioFinal() {
-        double precioBase = calcularPrecioBase();
-        return precioBase + 10;
+        return super.calcularPrecioFinal() + COSTO;
     }
-
-    @Override
-    public String getDescripcion() {
-        return "Servicio de Aromatizante añadido con un cargo de $10";
-    }
-    
 }

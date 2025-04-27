@@ -6,17 +6,17 @@ package com.mycompany.lab03.Classes;
 
 /**
  *
- * @author aleramirez
+ * @author hawaiana
  */
-public class DescuentoClienteFrecuente implements Descuento {
-    private final double porcentaje;
+public class DescuentoCampania implements Descuento {
+    private final double montoFijo;
 
-    public DescuentoClienteFrecuente(double porcentaje) {
-        this.porcentaje = porcentaje;
+    public DescuentoCampania(double montoFijo) {
+        this.montoFijo = montoFijo;
     }
-
     @Override
     public double aplicarDescuento(double monto) {
-        return monto * (1 - porcentaje);
+        double resultado = monto - montoFijo;
+        return (resultado < 0) ? 0 : resultado;
     }
 }

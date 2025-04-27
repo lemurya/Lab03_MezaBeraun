@@ -6,19 +6,26 @@ package com.mycompany.lab03.Classes;
 
 /**
  *
- * @author aleramirez
+ * @author hawaiana
  */
 public abstract class ServicioAdicional extends ServicioLimpieza {
-    
-    protected ServicioLimpieza servicioBase; 
+    protected final ServicioLimpieza servicioBase;
 
-public ServicioAdicional(String direccionCliente, double duraciónHoras, double tarifaHora, boolean incluyeMateriales, String nombreCliente) {
-        super(direccionCliente, duraciónHoras, tarifaHora, incluyeMateriales, nombreCliente);
+    public ServicioAdicional(ServicioLimpieza servicioBase) {
+        super(
+            servicioBase.getDireccionCliente(),
+            servicioBase.getDuracionHoras(),
+            servicioBase.getTarifaHora(),
+            servicioBase.isIncluyeMateriales(),
+            servicioBase.getNombreCliente()
+        );
+        this.servicioBase = servicioBase;
     }
 
     @Override
-    public abstract double calcularPrecioFinal();
-    public abstract String getDescripcion();
-    
+    public double calcularPrecioFinal() {
+        // Por defecto delega al servicio base; las subclases sumarán su cargo
+        return servicioBase.calcularPrecioFinal();
+    }
 }
 

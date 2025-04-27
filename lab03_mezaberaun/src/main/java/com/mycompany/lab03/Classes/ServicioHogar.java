@@ -6,7 +6,7 @@ package com.mycompany.lab03.Classes;
 
 /**
  *
- * @author aleramirez
+ * @author hawaiana
  */
 public class ServicioHogar extends ServicioLimpieza{
     

@@ -6,23 +6,18 @@ package com.mycompany.lab03.Classes;
 
 /**
  *
- * @author RYA
+ * @author hawaiana
  */
-public class ConDesinfeccion extends ServicioAdicional{
+public class ConDesinfeccion extends ServicioAdicional {
 
-    public ConDesinfeccion(String direccionCliente, double duraciónHoras, double tarifaHora, boolean incluyeMateriales, String nombreCliente) {
-        super(direccionCliente, duraciónHoras, tarifaHora, incluyeMateriales, nombreCliente);
+    private static final double COSTO = 15.00;
+
+    public ConDesinfeccion(ServicioLimpieza servicioBase) {
+        super(servicioBase);
     }
 
     @Override
     public double calcularPrecioFinal() {
-        double precioBase = calcularPrecioBase();
-        return precioBase + 20;
+        return super.calcularPrecioFinal() + COSTO;
     }
-
-    @Override
-    public String getDescripcion() {
-        return "Servicio de Desinfección añadido con un cargo de $20";
-    }
-    
 }

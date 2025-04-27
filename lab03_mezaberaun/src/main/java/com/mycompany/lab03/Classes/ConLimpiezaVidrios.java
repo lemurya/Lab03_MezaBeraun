@@ -6,23 +6,18 @@ package com.mycompany.lab03.Classes;
 
 /**
  *
- * @author RYA
+ * @author hawaiana
  */
-public class ConLimpiezaVidrios extends ServicioAdicional{
+public class ConLimpiezaVidrios extends ServicioAdicional {
 
-    public ConLimpiezaVidrios(String direccionCliente, double duraciónHoras, double tarifaHora, boolean incluyeMateriales, String nombreCliente) {
-        super(direccionCliente, duraciónHoras, tarifaHora, incluyeMateriales, nombreCliente);
+    private static final double COSTO = 10.00;
+
+    public ConLimpiezaVidrios(ServicioLimpieza servicioBase) {
+        super(servicioBase);
     }
 
     @Override
     public double calcularPrecioFinal() {
-        double precioBase = calcularPrecioBase();
-        return precioBase + 50;
+        return super.calcularPrecioFinal() + COSTO;
     }
-
-    @Override
-    public String getDescripcion() {
-        return "Servicio de Limpieza de vidrios añadido con un cargo de $50";
-    }
-    
 }

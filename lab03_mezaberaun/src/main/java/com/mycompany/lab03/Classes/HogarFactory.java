@@ -6,7 +6,7 @@ package com.mycompany.lab03.Classes;
 
 /**
  *
- * @author RYA
+ * @author hawaiana
  */
 public class HogarFactory extends ServicioFactory {
     private final boolean esApartamento;
